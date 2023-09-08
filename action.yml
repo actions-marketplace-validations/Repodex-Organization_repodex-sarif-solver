@@ -10,3 +10,7 @@ inputs:
 runs:
   using: 'node16'  # Optional upgrade to Node 16
   main: 'dist/index.js'
+branding:
+  icon: 'check-circle'  # This is just an example; choose an appropriate icon.
+  color: 'green'  # Choose a color that represents your action or brand.
+

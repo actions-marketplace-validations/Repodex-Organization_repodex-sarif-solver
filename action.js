@@ -24,11 +24,9 @@ async function run() {
 
         for (const sarifFile of sarifFiles) {
             const fullPath = path.join(sarifDir, sarifFile);
-            console.log('Processing SARIF file:', fullPath);
 
             const sarifData = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
             const results = sarifData?.runs[0]?.results;
-            const rules = sarifData?.runs[0]?.tool?.driver?.rules; 
             const extensionRules = sarifData?.runs[0]?.tool?.extensions[0]?.rules;
 
             function getDescriptionAndRecommendation(ruleId) {
@@ -137,16 +135,6 @@ async function run() {
             }
         }
     } catch (error) {
-        if (error.response) {
-            console.error('Response data:', error.response.data);
-            console.error('Response status:', error.response.status);
-            console.error('Response headers:', error.response.headers);
-        } else if (error.request) {
-            console.error('The request was made but no response was received:', error.request);
-        } else {
-            console.error('Error:', error.message);
-        }
-        console.error('Axios config:', error.config);
         process.exit(1);
     }
 }
