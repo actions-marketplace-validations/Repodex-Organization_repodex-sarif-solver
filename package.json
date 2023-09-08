@@ -1,0 +1,22 @@
+{
+  "name": "repodex-sarif-solver",
+  "version": "1.0.0",
+  "description": "This GitHub Action processes the SARIF results from a CodeQL analysis and communicates with the Repodex backend service to generate solutions for found issues.",
+  "main": "action.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@octokit/rest": "^20.0.1",
+    "axios": "^1.5.0",
+    "diff": "^5.1.0",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.4"
+  }
+}

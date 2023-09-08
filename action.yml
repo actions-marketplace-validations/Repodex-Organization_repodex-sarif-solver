@@ -1,0 +1,12 @@
+name: 'Repodex SARIF Solver'
+description: 'Processes SARIF results from a CodeQL analysis and generates solutions.'
+inputs:
+  api-key:
+    description: 'API key for Repodex service'
+    required: true
+  github-token:
+    description: 'GitHub token for accessing the repository'
+    required: true
+runs:
+  using: 'node16'  # Optional upgrade to Node 16
+  main: 'dist/index.js'
